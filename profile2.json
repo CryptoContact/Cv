@@ -1,79 +1,133 @@
 {
-  "resourceType": "Bundle",
-  "type": "collection",
-  "entry": [
-    {
-      "fullUrl": "resource:0",
-      "resource": {
-        "resourceType": "Patient",
-        "name": [
-          {
-            "family": "LAIN",
-            "given": [
-              "UAIO",
-              "C."
-            ]
-          }
-        ],
-        "birthDate": "1961-01-20"
-      }
+    "header": {
+        "kid": "qFdl0tDZK9JAWP6g9_cAv57c3KWxMKwvxCrRVSzcxvM",
+        "zip": "DEF",
+        "alg": "ES256"
     },
-    {
-      "fullUrl": "resource:1",
-      "resource": {
-        "resourceType": "Immunization",
-        "meta": {
-          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL2"}]
-        },
-        "status": "completed",
-        "vaccineCode": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/sid/cvx",
-              "code": "208"
+    "payload": {
+        "iss": "https://covid19.quebec.ca/PreuveVaccinaleApi/issuer",
+        "nbf": 1630501199,
+        "vc": {
+            "@context": [
+                "https://www.w3.org/2018/credentials/v1"
+            ],
+            "type": [
+                "VerifiableCredential",
+                "https://smarthealth.cards#health-card",
+                "https://smarthealth.cards#covid19",
+                "https://smarthealth.cards#immunization"
+            ],
+            "credentialSubject": {
+                "fhirVersion": "1.0.2",
+                "fhirBundle": {
+                    "resourceType": "Bundle",
+                    "type": "Collection",
+                    "entry": [
+                        {
+                            "resource": {
+                                "resourceType": "Patient",
+                                "name": [
+                                    {
+                                        "family": "Linseman",
+                                        "given": [
+                                            "Adam"
+                                        ]
+                                    }
+                                ],
+                                "birthDate": "1983-10-01"
+                            }
+                        },
+                        {
+                            "resource": {
+                                "resourceType": "Immunization",
+                                "status": "Completed",
+                                "vaccineCode": {
+                                    "coding": [
+                                        {
+                                            "system": "http://hl7.org/fhir/sid/cvx",
+                                            "code": "208"
+                                        }
+                                    ]
+                                },
+                                "patient": {
+                                    "reference": "resource:0"
+                                },
+                                "occurrenceDateTime": "2021-05-29",
+                                "lotNumber": "EW0216",
+                                "protocolApplied": {
+                                    "doseNumber": 1,
+                                    "targetDisease": {
+                                        "coding": [
+                                            {
+                                                "system": "http://browser.ihtsdotools.org/?perspective=full&conceptId1=840536004",
+                                                "code": "840536004"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "note": [
+                                    {
+                                        "text": "PB COVID-19"
+                                    }
+                                ],
+                                "reported": false,
+                                "wasNotGiven": false,
+                                "location": {
+                                    "reference": "resource:0",
+                                    "display": "06 CLSC DE LA VISITATION"
+                                }
+                            }
+                        },
+                        {
+                            "resource": {
+                                "resourceType": "Immunization",
+                                "status": "Completed",
+                                "vaccineCode": {
+                                    "coding": [
+                                        {
+                                            "system": "http://hl7.org/fhir/sid/cvx",
+                                            "code": "208"
+                                        }
+                                    ]
+                                },
+                                "patient": {
+                                    "reference": "resource:0"
+                                },
+                                "occurrenceDateTime": "2021-07-26",
+                                "lotNumber": "FA9099",
+                                "protocolApplied": {
+                                    "doseNumber": 2,
+                                    "targetDisease": {
+                                        "coding": [
+                                            {
+                                                "system": "http://browser.ihtsdotools.org/?perspective=full&conceptId1=840536004",
+                                                "code": "840536004"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "note": [
+                                    {
+                                        "text": "PB COVID-19"
+                                    }
+                                ],
+                                "reported": false,
+                                "wasNotGiven": false,
+                                "location": {
+                                    "reference": "resource:0",
+                                    "display": "06 SITE DE VACCINATION (UNIVERSITÉ DE MONTRÉAL (MIL)"
+                                }
+                            }
+                        }
+                    ]
+                }
             }
-          ]
-        },
-        "patient": {
-          "reference": "resource:0"
-        },
-        "occurrenceDateTime": "2021-01-01",
-        "performer": [
-          {
-            "actor": {
-              "display": "ABC General Hospital"
-            }
-          }
-        ],
-        "lotNumber": "0000002"
-      }
+        }
     },
-    {
-      "fullUrl": "resource:2",
-      "resource": {
-        "resourceType": "Immunization",
-        "status": "completed",
-        "vaccineCode": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/sid/cvx",
-              "code": "208"
-            }
-          ]
-        },
-        "patient": {
-          "reference": "resource:0"
-        },
-        "occurrenceDateTime": "2021-01-29",
-        "performer": [
-          {
-            "actor": {
-              "display": "ABC General Hospital"
-            }
-          }
-        ],
-        "lotNumber": "0000008"
-      }
+    "verifications": {
+        "trustable": true,
+        "verifiedBy": "Nqa1zvChOkoA46B5ZM_oK3MDhL3-mnLERV_30vkHQIc",
+        "origin": "https://covid19.quebec.ca/PreuveVaccinaleApi/issuer",
+        "isFromCache": true
     }
-  ]
 }
